@@ -16,7 +16,7 @@
         <p style="opacity: 0.8; line-height: 1.8; font-size: 14px;">
             
             • 마우스를 움직이거나 드래그하여 우주 속을 떠도는 분실물들를 탐색하세요.<br>
-            • 아이템을 클릭하여 분실물들의 이야기에 공감할 수 있습니다.
+            • 아이템을 클릭하여 분실물들의 이야기에 공감하세요.
         </p>
         <button onclick="closeGuide()" style="margin-top: 20px; background: white; border: none; padding: 10px 30px; border-radius: 50px; font-weight: bold; cursor: pointer; transition: 0.3s;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">탐색 시작</button>
     </div>
@@ -170,8 +170,7 @@ window.onload = function() {
     const itemStates = Array.from(items).map(item => {
         const itemSize = 0.7 + Math.random() * 0.5;
         
-        // [핵심 수정] 텍스트 설명창(caption)의 실제 너비를 고려한 마진 계산
-        // 보통 설명창 너비가 240px 내외이므로, 아이콘 중심에서 한쪽으로 120px 정도 나갑니다.
+        
         const captionWidth = 240; 
         const iconWidth = 240 * itemSize;
         // 아이콘보다 텍스트가 더 클 경우를 대비해 삐져나가는 여백 계산
@@ -272,8 +271,7 @@ window.onload = function() {
             const currentRotation = Math.sin(state.angle) * 8;
             const itemSizeActual = 240 * state.scale;
 
-            // [수정 포인트] 텍스트 설명창(Caption)이 잘리지 않도록 경계값 수정
-            // 1. 좌우: state.sideMargin 만큼의 여유 공간을 줌
+            
             if (state.x < state.sideMargin) {
                 state.x = state.sideMargin;
                 state.vx *= -1;
@@ -282,7 +280,7 @@ window.onload = function() {
                 state.vx *= -1;
             }
 
-            // 2. 상하: 위쪽은 50px, 아래쪽은 설명창 높이를 감안해 200px 여유를 줌
+            
             if (state.y < 50) {
                 state.y = 50;
                 state.vy *= -1;

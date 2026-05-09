@@ -58,9 +58,7 @@ body {
     z-index: 10;
 }
 
-/* 2. 클릭 시(active) 이미지 뒤에 퍼지는 네온 범위 축소 및 흰색 고정 */
 .lost-item.active .graphic img {
-    /* 범위를 15px/30px에서 8px/15px로 대폭 줄여서 은은하게 수정 */
     filter: drop-shadow(0 0 8px var(--neon-color)) drop-shadow(0 0 15px rgba(255,255,255,0.5));
     transform: scale(1.1);
     transition: all 0.3s ease;
@@ -73,22 +71,19 @@ body {
     -webkit-user-drag: none;
 }
 
-/* 3. 설명창(caption) 테두리 및 그림자 색상 수정 */
 .caption {
     width: 240px;
     background: rgba(0, 0, 0, 0.85);
     backdrop-filter: blur(12px);
     color: #fff;
     padding: 20px;
-    border-radius: 0; /* 아래 중복 정의 반영 */
+    border-radius: 0;
     margin-top: 15px;
     opacity: 0;
     transform: translateY(10px);
     transition: opacity 0.4s ease, transform 0.4s ease;
     pointer-events: none;
-    /* 테두리 색상 흰색 투명도로 변경 */
     border: 1px solid rgba(255, 255, 255, 0.4);
-    /* 푸른색 그림자 제거 및 흰색 은은한 광채 */
     box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
     backface-visibility: hidden;
     -webkit-font-smoothing: antialiased;
@@ -103,12 +98,10 @@ body {
 .caption .title {
     font-size: 18px;
     font-weight: bold;
-    color: var(--neon-color); /* 흰색 반영 */
+    color: var(--neon-color); 
     margin-bottom: 10px;
-    /* 구분선 푸른색 제거 */
     border-bottom: 1px solid rgba(255, 255, 255, 0.3);
     padding-bottom: 5px;
-    /* 텍스트 네온 범위 축소 */
     text-shadow: 0 0 5px var(--neon-color);
 }
 
@@ -120,7 +113,6 @@ body {
     font-weight: 300;
 }
 
-/* 4. 기본 이미지 필터 (회색조 유지) */
 .lost-item img {
     width: 250px;
     height: auto;
@@ -128,9 +120,6 @@ body {
     transition: 0.3s;
 }
 
-
-
-/* CSS 파일에 이 부분을 추가하거나 수정해줘 */
 #guide-modal {
     position: fixed;
     top: 0;
@@ -141,12 +130,12 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 9999; /* 우주(10)보다 훨씬 높게 설정해서 무조건 맨 위로 */
+    z-index: 9999;
     transition: opacity 0.4s;
 }
 
 #guide-modal button {
     cursor: pointer;
-    pointer-events: auto; /* 클릭이 가능하도록 강제 설정 */
+    pointer-events: auto;
 }
 
